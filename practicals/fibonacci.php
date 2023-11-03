@@ -1,23 +1,33 @@
 <?php
-function generateFibonacci($n) {
-    $fibonacci = array();
-    
-    if ($n >= 1) {
-        $fibonacci[] = 0;
+
+/**
+ * Generate the nth Fibonacci number.
+ *
+ * @param int $n The index of the Fibonacci number to generate.
+ *
+ * @return int The nth Fibonacci number.
+ */
+function fibonacci($n) {
+    if ($n <= 0) {
+        return 0;
+    } elseif ($n == 1) {
+        return 1;
     }
-    if ($n >= 2) {
-        $fibonacci[] = 1;
+
+    $prev = 0;
+    $current = 1;
+
+    for ($i = 2; $i <= $n; $i++) {
+        $next = $prev + $current;
+        $prev = $current;
+        $current = $next;
     }
-    
-    for ($i = 2; $i < $n; $i++) {
-        $fibonacci[] = $fibonacci[$i - 1] + $fibonacci[$i - 2];
-    }
-    
-    return $fibonacci;
+
+    return $current;
 }
 
-$n = 10; // Change this to the number of Fibonacci numbers you want to generate
-$fibonacciNumbers = generateFibonacci($n);
-
-echo "The first $n Fibonacci numbers are: " . implode(", ", $fibonacciNumbers);
+// Example usage:
+$n = 10;
+$result = fibonacci($n);
+echo "The $n-th Fibonacci number is $result";
 ?>
