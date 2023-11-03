@@ -1,15 +1,20 @@
 <?php
-$number1 = 5;
-$number2 = 10;
+function swapNumbers($a, $b) {
+    // Output the initial values of $a and $b
+    echo "Before swapping: a = $a, b = $b\n";
+    
+    // Swap the values of $a and $b using a temporary variable
+    $temp = $a;
+    $a = $b;
+    $b = $temp;
 
-echo "Before swapping: ";
-echo "Number 1: " . $number1 . ", Number 2: " . $number2 . "<br>";
+    // Output the swapped values of $a and $b
+    echo "After swapping: a = $a, b = $b\n";
+}
 
-// Swap the numbers using a temporary variable
-$temp = $number1;
-$number1 = $number2;
-$number2 = $temp;
-
-echo "After swapping: ";
-echo "Number 1: " . $number1 . ", Number 2: " . $number2;
+// Example usage
+$a = 5;
+$b = 10;
+swapNumbers($a, $b);
 ?>
+
