@@ -19,7 +19,7 @@ class Practical {
     public static function add($a, $b) {
         if(!is_int($num1) || !is_int($num2))
         {
-            throw new \InvalidArgumentException("Arguments must be integers");
+            throw new InvalidArgumentException("Arguments must be integers");
         }
         return $a + $b;
     }
