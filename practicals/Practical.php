@@ -16,12 +16,12 @@ class Practical {
      * @param int $b The second number
      * @return int The sum of the two numbers
      */
-    public static function add($a, $b) {
-        if(!is_int($num1) || !is_int($num2))
+    public static function add($num1, $num2) {
+        if(!is_numeric($num1) || !is_numeric($num2))
         {
-            throw new InvalidArgumentException("Arguments must be integers");
+            throw new \InvalidArgumentException("Arguments must be numeric");
         }
-        return $a + $b;
+        return $num1 + $num2;
     }
 
     /**
