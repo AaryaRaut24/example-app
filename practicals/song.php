@@ -1,5 +1,6 @@
 <?php
 // Define the Song class
+namespace Practicals;
 class Song {
     private $title;
     private $artist;
