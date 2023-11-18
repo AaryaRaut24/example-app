@@ -1,14 +1,14 @@
 <?php
 // Define the Song class
 namespace Practicals;
-class Song {
+class song {
     private $title;
     private $artist;
     private $genre;
     private $tempo;
 
-    // Constructor to initialize properties
-    public function __construct($title, $artist, $genre, $tempo) {
+    
+    public function construct($title, $artist, $genre, $tempo) {
         $this->title = $title;
         $this->artist = $artist;
         $this->genre = $genre;
@@ -54,5 +54,6 @@ class Song {
     public function setTempo($tempo) {
         $this->tempo = $tempo;
     }
+       
 }
 ?>
