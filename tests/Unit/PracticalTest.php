@@ -9,7 +9,7 @@ use practicals\Practical;
 
 class PracticalTest extends TestCase
 {
-   /**
+    /**
      * A basic unit test example.
      */
     public function testAdd(): void
@@ -66,6 +66,30 @@ class PracticalTest extends TestCase
         $this->expectException(\InvalidArgumentException::class);
         \Practical::add("a1","2");
     }
+
+    public function testFibonacciAcceptsInteger(): void
+    {
+        $this->assertEquals(\Practical::generateFibonacciSequence(4),[0,1,1,2]);
     }
+
+    public function testRejectString(): void
+    {
+        $this->expectException(\InvalidArgumentException::class);
+        $this->assertIsString(\Practical::generateFibonacciSequence("4"));
+    }
+
+    public function testRejectAlphabet(): void
+    {
+        $this->expectException(\InvalidArgumentException::class);
+        \Practical::generateFibonacciSequence("abc");
+    }
+
+    public function testRejectFloat(): void
+    {
+        $this->expectException(\InvalidArgumentException::class);
+        $this->assertIsFloat(\Practical::generateFibonacciSequence("4.5"));
+    }
+
+}
 
 ?>
