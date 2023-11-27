@@ -17,17 +17,9 @@ class SongsTest extends TestCase
 
         $response->assertStatus(200);
     }
-    
-       /**
+        /**
      * A basic feature test songs.
      */
-    /*public function testSongsOk(): void
-    {
-        $response = $this->get('/songs');
-
-        $response->assertStatus(200);
-    }*/
-
     public function testSongsOk(): void
     {
         $response = $this->get('/songs_static');
